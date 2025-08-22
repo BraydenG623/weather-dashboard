@@ -1,3 +1,6 @@
+
+
+
 .App {
   text-align: center;
 }
@@ -35,4 +38,192 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.header1{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background: var(--color-card);   /* uses theme variable */
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  top: 0;
+  height: 100px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6); /* faint shadow below */
+}
+
+
+  /* Header CSS */
+.headerInfo {
+  font-family: Inter;
+  font-weight: 400;
+}
+
+.headerImg {
+  width: 50px;
+}
+
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: sans-serif;
+}
+
+
+.searchWeatherForm {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.searchTextHeader {
+  font-family: system-ui;
+  margin-top: 50px;
+  font-weight: 500;
+  color:beige
+}
+main > form > input {
+  width: 250px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #2c5364;
+  padding: 10px 15px;
+
+}
+
+.submitButton {
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  background:#2c5364;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.searchRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;              
+}
+
+.searchRow input {
+  width: 250px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1px solid #2c5364;
+  padding: 10px 15px;
+}
+
+.submitButton:hover {
+  background: #2563eb;
+}
+
+/* Error banner */
+.errorBanner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem auto;
+  color: #fca5a5;           
+  margin-top: 1rem;
+  background: rgba(252, 165, 165, 0.1);
+  border: 1px solid #fca5a5;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  max-width: 300px;
+  
+}
+
+.weatherCard {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--color-card);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.weatherContent {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.weatherTemp {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.weatherDesc {
+  opacity: 0.8;
+  text-transform: capitalize;
+}
+
+
+/* Card title spacing */
+.weatherTitle { 
+  margin: 0 0 0.5rem 0; 
+}
+
+/* Make the weather card a two-column layout */
+.weatherCardGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;  /* left current | right forecast */
+  gap: 1rem;
+}
+
+/* Left column (current) */
+.currentCol .weatherContent {
+  display: flex;
+  align-items: left;
+  gap: 1rem;
+}
+
+/* Right column (forecast) */
+.forecastTitle {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+.forecastGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.forecastItem {
+  text-align: center;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  padding: 0.5rem;
+}
+
+.forecastLabel {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  margin-bottom: 0.25rem;
+}
+
+.forecastTemp {
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+@media (max-width: 720px) {
+  .weatherCardGrid {
+    grid-template-columns: 1fr; 
+  }
+  .forecastGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Toggle row */
+.unitToggle {
+  display: inline-flex;
+  gap: 0.5rem;
 }
